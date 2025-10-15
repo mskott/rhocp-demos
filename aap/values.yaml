@@ -11,7 +11,8 @@ helper-status-checker:
   enabled: true
   approver: false
   checks:
-    - operatorName: ansible-automation-platform
+    - operatorName: aap-operator
+      subscriptionName: ansible-automation-platform
       namespace:
         name: aap
       syncwave: '1'

@@ -1,7 +1,8 @@
 apiVersion: aap.ansible.com/v1alpha1
 kind: AnsibleAutomationPlatform
 metadata:
-  name: aap26
+  name: {{ .Values.aap.name }}
+  namespace: {{ .Values.namespace }}
 spec:
   database:
     resource_requirements:
@@ -21,5 +22,5 @@ spec:
   hub:
     disabled: false
     storage_type: file
-    file_storage_storage_class: ocs-external-storagecluster-cephfs
+    file_storage_storage_class: {{ .Values.aap.hub.fileStorageStorageClass }}
     file_storage_size: 10Gi

@@ -1,0 +1,7 @@
+namespace: aap # Documentation recommends using "aap"
+aap:
+  name: aap26 # Name of AnsibleAutomationPlatform resource
+  hub:
+    fileStorageStorageClass: ocs-external-storagecluster-cephfs
+operator:
+  channel: stable-2.6

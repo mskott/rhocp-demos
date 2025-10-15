@@ -5,3 +5,15 @@ aap:
     fileStorageStorageClass: ocs-external-storagecluster-cephfs
 operator:
   channel: stable-2.6
+
+# Using sub-chart helper-status-checker
+helper-status-checker:
+  enabled: true
+  approver: false
+  checks:
+    - operatorName: ansible-automation-platform
+      namespace:
+        name: aap
+      syncwave: '1'
+      serviceAccount:
+        name: "aap-status-checker"

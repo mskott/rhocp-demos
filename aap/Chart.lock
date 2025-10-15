@@ -1,0 +1,6 @@
+dependencies:
+- name: helper-status-checker
+  repository: https://charts.stderr.at/
+  version: 4.0.16
+digest: sha256:6b90123c0c234717873ef7743ae13a2647a033b04218092088cbb3c0d827de24
+generated: "2025-10-15T11:04:33.168063886+02:00"

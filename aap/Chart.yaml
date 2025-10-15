@@ -4,3 +4,8 @@ description: Ansible Automation Platform
 type: application
 version: 0.0.1
 appVersion: "2.6"
+
+dependencies:
+  - name: helper-status-checker
+    version: ~4.0.14
+    repository: https://charts.stderr.at/

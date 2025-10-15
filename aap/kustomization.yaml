@@ -6,3 +6,4 @@ namespace: aap
 resources:
   - namespace.yaml
   - operator.yaml
+  - aap.yaml

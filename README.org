@@ -4,5 +4,5 @@ Heavily inspired by the [[https://github.com/rhpds/ocp-cluster-addons][OCP Clust
 resources for use on the Red Hat Demo Platform.
 
 - ~aap/~ easy deployment of Ansible Automation Platform based on Helm and ArgoCD.
-  Run ~oc create -f aap/application-aap.yaml~ on a cluster with ArgoCD and AAP will
+  Run ~oc create -f application-aap.yaml~ on a cluster with ArgoCD and AAP will
   be deployed.

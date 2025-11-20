@@ -6,3 +6,5 @@ resources for use on the Red Hat Demo Platform.
 - ~aap/~ easy deployment of Ansible Automation Platform based on Helm and ArgoCD.
   Run ~oc create -f application-aap.yaml~ on a cluster with ArgoCD and AAP will
   be deployed.
+- ~todo-app/~ simple web application using a database. Copied from the [[https://github.com/OpenShiftDemos/openshift-gitops-workshop][GitOps workshop]].
+  After deployment visit /todo.html - the app doesn't redirect.

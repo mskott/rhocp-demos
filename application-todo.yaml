@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: todo-app
+  namespace: openshift-gitops
+spec:
+  destination:
+    namespace: todo
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    path: todo-app
+    repoURL: https://github.com/mskott/rhocp-demos.git
+    targetRevision: main
+  syncPolicy:
+    automated:
+      enabled: true
+    syncOptions:
+      - CreateNamespace=True

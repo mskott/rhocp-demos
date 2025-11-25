@@ -1,0 +1,50 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: todo
+  labels:
+    app: todo
+  namespace: openshift-gitops
+spec:
+  description: The Todo list application
+  sourceRepos:
+  - 'https://github.com/mskott/rhocp-demos.git'
+  destinations:
+  - namespace: '*'
+    server: 'https://kubernetes.default.svc'
+  clusterResourceWhitelist:
+  - group: '*'
+    kind: '*'
+---
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  namespace: openshift-gitops
+  name: todo
+spec:
+  goTemplate: true
+  goTemplateOptions: ["missingkey=error"]
+  generators:
+  - list:
+      elements:
+        - stage: dev
+        - stage: test
+        - stage: prod
+  template:
+    metadata:
+      name: 'todo-{{.stage}}'
+    spec:
+      project: todo
+      source:
+        path: todo-app
+        repoURL: https://github.com/mskott/rhocp-demos.git
+        targetRevision: main
+      destination:
+        namespace: 'todo-{{.stage}}'
+        server: https://kubernetes.default.svc
+      syncPolicy:
+        automated:
+          enabled: true
+        syncOptions:
+          - CreateNamespace=true

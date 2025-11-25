@@ -1,8 +1,14 @@
 {
 	"extensions": {
 		"recommendations": [
-                        "redhat.vscode-yaml",
-                        "redhat.vscode-openshift-connector",
- 		]
+			"redhat.vscode-yaml",
+			"redhat.vscode-openshift-connector"
+		]
 	},
+	"folders": [
+		{
+			"name": "rhocp-demos",
+			"path": "/projects/rhocp-demos"
+		}
+	]
 }
